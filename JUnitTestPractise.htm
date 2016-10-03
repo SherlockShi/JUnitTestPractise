@@ -1,0 +1,306 @@
+<!--
+    Powered By nodePPT - This is probably the best web presentation tool so far!
+    version: 1.4.2
+    site: https://github.com/ksky521/nodePPT
+    date: 
+-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JUnit单元测试实践 - By 施纯飞 SherlockShi</title>
+    <link rel="stylesheet" media="all" href="./css/nodeppt.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="./css/phone.css">
+    
+    <link rel="stylesheet" href="./js/highlight/styles/monokai_sublime.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    
+<link rel="stylesheet" href="./css/theme.moon.css">
+</head>
+<body>
+<div class="slides">
+    <slides id="container">
+        <slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>JUnit单元测试实践</h1>
+
+</hgroup><article>
+
+
+<h3>　　　　　SherlockShi</h3>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>目录</h1>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>一、 单元测试的概念</li>
+<li>二、 单元测试的内容</li>
+<li>三、 JUnit的使用方法</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>一、 单元测试的概念</h1>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>单元测试，是指为了测试某一个类的某一个方法能否正常工作，而写的测试代码。</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>二、单元测试的内容</h1>
+
+</hgroup><article>
+
+<img src="http://7xlpfl.com1.z0.glb.clouddn.com/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%AD%A5%E9%AA%A41.png" width="200" height="220" alt="单元测试的内容"/>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>三、 JUnit</h1>
+
+</hgroup><article>
+
+<h1><strong>Java</strong></h1>
+<ul class="rollIn">
+<li>Eclipse</li>
+<li>MyEclipse</li>
+<li>IntelliJ IDEA</li>
+<li><code>Android Studio</code></li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>三、 JUnit</h1>
+
+</hgroup><article>
+
+<p><code>使用方法：</code></p>
+<ol class="rollIn">
+<li><p>添加依赖(Android Studio默认自动依赖)</p>
+<pre><code class="groovy">testCompile &#39;junit:junit:4.12&#39;
+</code></pre>
+</li>
+<li><p>编写测试方法</p>
+</li>
+<li><p>运行测试  </p>
+<ul>
+<li>1) 在开发环境中测试</li>
+<li>2) 使用命令行</li>
+</ul>
+</li>
+</ol>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>三、 JUnit</h1>
+
+</hgroup><article>
+
+<p><code>一个单元测试方法的内容：</code></p>
+<ol class="rollIn">
+<li><p>初始化</p>
+<pre><code class="java">Calculator calculator = new Calculator();
+</code></pre>
+</li>
+<li><p>执行操作</p>
+<pre><code class="java">int sum = calculator.add(1, 2);
+</code></pre>
+</li>
+<li><p>验证结果</p>
+<pre><code class="java">Assert.assertEquals(3, sum);
+</code></pre>
+</li>
+</ol>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>三、 JUnit</h1>
+
+</hgroup><article>
+
+<p><code>JUnit相关注解：</code></p>
+<pre><code class="java">@Before  
+@After  
+
+@Test  
+
+@BeforeClass  
+@AfterClass
+
+@Ignore
+</code></pre>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>三、 JUnit</h1>
+
+</hgroup><article>
+
+<p>JUnit中的方法执行过程</p>
+<p class="rollIn"><span><img src="http://7xlpfl.com1.z0.glb.clouddn.com/JUnit%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B1.png" width="120" height="300" alt="JUnit中的方法执行过程"/> <span></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>三、 JUnit</h1>
+
+</hgroup><article>
+
+<p><code>Assert类的重要方法：</code></p>
+<ul>
+<li><p>检查两个变量或者等式是否相等：</p>
+<pre><code class="java">assertEquals(expected, actual)
+assertEquals(expected, actual, tolerance)
+</code></pre>
+</li>
+<li><p>检查条件为真/假：</p>
+<pre><code class="java">assertTrue(boolean condition)
+assertFalse(boolean condition)
+</code></pre>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>三、 JUnit</h1>
+
+</hgroup><article>
+
+<p><code>Assert类的重要方法：</code></p>
+<ul>
+<li><p>检查对象为空/非空:</p>
+<pre><code class="java">assertNull(Object obj)
+assertNotNull(Object obj)
+</code></pre>
+</li>
+<li><p>检查对象是否相同/不同：</p>
+<pre><code class="java">assertSame(expected, actual)
+assertNotSame(expected, actual)
+</code></pre>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>四、更多</h1>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>超时测试</li>
+<li>异常测试</li>
+<li>套件测试</li>
+<li>参数化测试</li>
+<li>其它框架<ul>
+<li>Mockito</li>
+<li>Robolectric</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>五、总结</h1>
+
+</hgroup><article>
+
+<ul class="rollIn">
+<li>单元测试的概念</li>
+<li>单元测试的内容</li>
+<li>JUnit框架<ul class="rollIn">
+<li>相关注解</li>
+<li>Assert类的重要方法</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>一些资料</h1>
+
+</hgroup><article>
+
+<ul>
+<li><a href="https://github.com/junit-team/junit4/wiki" target="_blank">JUnit4官方Wiki</a></li>
+<li><a href="http://wiki.jikexueyuan.com/project/junit/" target="_blank">JUnit 入门教程（极客学院Wiki）</a></li>
+<li><a href="http://www.jianshu.com/p/b2717dc245da" target="_blank">邹小创的Android 单元测试系列</a></li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>Thank you!</h1>
+
+</article></section></slide>
+        
+
+        <!-- <slide class="slide logoslide dark nobackground">
+            <article class="flexbox vcenter">
+                <h2 style="color: white;">Powered By nodePPT v1.4.2</h2>
+            </article>
+        </slide> -->
+        <div class="slideTip" id="tip"></div>
+    </slides>
+</div>
+<canvas id="drawBoard" class="draw-board" width="900" height="700"></canvas>
+<div class="progress"><span id="progress"></span></div>
+<div id="_buttons">
+    <div class="_btn-box" id="_btn-box" style="display:none;">
+        <button class="fa fa-arrow-circle-left" id="_btn-prev"></button>
+        <button class="fa fa-arrow-circle-right" id="_btn-next"></button>
+        <button class="fa fa-paint-brush" id="_btn-brush"></button>
+        <button class="fa fa-compress" id="_btn-overview" data-toggle="fa fa-expand"></button>
+    </div>
+    <button class="fa fa-bars" id="_btn-bar"  data-toggle="fa fa-close"></button>
+</div>
+<script src="./js/mixjs/lib/mix.0.3.0.min.js"></script>
+<script>
+var base = location.protocol + '//' + location.host;
+
+var path = (location.pathname + '#').split('/').filter(function(v){
+    return !!v;
+});
+path.pop();
+path = path.join('/');
+MixJS.config({
+    baseURL: [ base, path, 'js'].join('/')+'/'
+});
+
+</script>
+<script src="./js/mixjs/lib/event/broadcast.js"></script>
+<script src="./js/nodeppt.js"></script>
+<script>
+Slide.init({
+    containerID: 'container',
+    drawBoardID: 'drawBoard',
+    slideClass: '.slide',
+    buildClass: '.build',
+    progressID: 'progress',
+    transition: 'cards',
+    width: 1100,
+    dir: './',
+    
+    //打开下面的注释就开启postMessage方式
+    //访问网址127.0.0.1:8080/ppt/demo#client
+    control:{
+        type: 'postMessage',
+        args:{
+            isControl:  false
+        }
+    },
+    
+    tipID: 'tip'
+});
+MixJS.loadJS('highlight/highlight.pack.js',function(){
+    hljs.tabReplace = '  ';
+    hljs.initHighlightingOnLoad();
+});
+</script>
+<script src="./js/demo.js"></script>
+<link rel="stylesheet" href="./css/demo.css">
+
+<!--placeholder-->
+</body>
+</html>
